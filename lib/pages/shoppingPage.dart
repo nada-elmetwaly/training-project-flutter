@@ -1,11 +1,29 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:training_project/model/ApiProvider.dart';
+
+import '../model/shoppingModel.dart';
 
 
 
-class ShoppingPage extends StatelessWidget {
+class ShoppingPage extends StatefulWidget {
+  @override
+  State<ShoppingPage> createState() => _ShoppingPageState();
+}
+
+class _ShoppingPageState extends State<ShoppingPage> {
   TextEditingController controller=TextEditingController();
+  ShoppingModel? shoppingModel;
+  getShop() async{
+    shoppingModel=await ApiProvider().readShop();
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getShop();
+  }
 
   Widget _buildFeaturedProduct({String? name,double? price, String? image}){
     return Card(child: Container(
@@ -33,7 +51,6 @@ class ShoppingPage extends StatelessWidget {
   }
 
   //const ShoppingPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -46,7 +46,7 @@ class AboutApp extends StatelessWidget {
                 height: 100,
                 width: 40,
 
-                child: Text("THIS FASION APP GIVES YOU THE CHANCE TO CHOOSE CLOTHES WITH BEST PRICE AND DELIVERY",style: TextStyle(letterSpacing: 2,fontSize: 20),),
+                child: Text("THIS FASHION APP GIVES YOU THE CHANCE TO CHOOSE CLOTHES WITH BEST PRICE AND DELIVERY",style: TextStyle(letterSpacing: 2,fontSize: 20),),
               ),
             ),
             SizedBox(height: 40,),
